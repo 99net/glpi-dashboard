@@ -218,7 +218,7 @@ AND glpi_olas.type = 1
 AND glpi_tickets.date ".$datas2."
 ".$entidade."
 
-GROUP BY ola_name DESC
+GROUP BY ola_name
 ORDER BY total DESC ";
 
 $result_sla = $DB->query($sql_sla);			

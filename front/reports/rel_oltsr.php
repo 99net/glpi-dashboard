@@ -287,7 +287,7 @@ WHERE glpi_tickets.is_deleted = 0
 AND glpi_tickets.date ".$datas2."
 AND glpi_tickets.status IN ".$status."
 ".$entidade."
-GROUP BY id DESC
+GROUP BY id
 ORDER BY id DESC ";
 
 $result_cham = $DB->query($sql_cham);

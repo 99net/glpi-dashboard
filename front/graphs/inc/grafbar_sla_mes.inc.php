@@ -28,8 +28,8 @@ else {
 
 
 // distinguish between 0.90.x and 9.1 version
-if (GLPI_VERSION >= 9.1){
-	$slaid = "slts_ttr_id";		
+if (GLPI_VERSION >= 10.0){
+	$slaid = "slts_id_ttr";		
 }
 
 else {
@@ -43,8 +43,7 @@ FROM glpi_tickets, glpi_slas
 WHERE glpi_tickets.".$slaid." = glpi_slas.id
 AND glpi_tickets.is_deleted = 0
 AND glpi_tickets.date ".$datas."
-".$entidade."
-GROUP BY ".$slaid."
+GROUP BY id
 ORDER BY conta DESC ";
 
 $result3 = $DB->query($query3) or die('erro');
